@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import './about.dart';
 
 void main() => runApp(LLMApp());
+
+final List<String> imgList = [
+  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
+  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80'
+];
 
 class LLMApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,13 +19,13 @@ class LLMApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(title: 'LLM Church'),
+      home: LLMHomePage(title: 'LLM Church'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class LLMHomePage extends StatefulWidget {
+  LLMHomePage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -31,11 +39,54 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _LLMHomePageState createState() => _LLMHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+CarouselSlider getFullScreenCarousel(BuildContext mediaContext) {
+  return CarouselSlider(
+    autoPlay: true,
+    viewportFraction: 1.0,
+    aspectRatio: 1.0,
+    items: imgList.map(
+      (url) {
+        return Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(0.0)),
+            child: Image.network(
+              url,
+              fit: BoxFit.cover,
+              width: 1000.0,
+            ),
+          ),
+        );
+      },
+    ).toList(),
+  );
+}
+
+class _LLMHomePageState extends State<LLMHomePage> {
   int _counter = 0;
+
+  //Auto playing carousel
+  final CarouselSlider autoPlayDemo = CarouselSlider(
+    viewportFraction: 1.0,
+    aspectRatio: 1.5,
+    autoPlay: true,
+    items: imgList.map(
+      (url) {
+        return Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(0.0)),
+            child: Image.network(
+              url,
+              fit: BoxFit.cover,
+              width: 1000.0,
+            ),
+          ),
+        );
+      },
+    ).toList(),
+  );
 
   void _incrementCounter() {
     setState(() {
@@ -57,11 +108,21 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: Text('Home Page')),
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text('Home'),
+        backgroundColor: Colors.transparent,
+      ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("assets/images/home_bg.jpeg")),
+            backgroundBlendMode: BlendMode.clear,
+            color: Color(0xff48A6DC)),
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -79,53 +140,66 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Image(image: AssetImage('assets/images/llm-logo.png')),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Icon(
-                  Icons.home,
-                  size: 60,
-                ),
-                Icon(
-                  Icons.people,
-                  size: 60,
-                ),
-                Icon(
-                  Icons.live_tv,
-                  size: 60,
-                ),
-                Icon(
-                  Icons.video_library,
-                  size: 60,
-                ),
-                Icon(
-                  Icons.contact_mail,
-                  size: 60,
-                ),
-              ],
+            Padding(
+                padding: EdgeInsets.only(top: 0),
+                //Builder needed to provide mediaQuery context from material app
+                child: Builder(builder: (context) {
+                  return Column(children: [
+                    getFullScreenCarousel(context),
+                  ]);
+                })),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 40.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.home,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                  Icon(
+                    Icons.people,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                  Icon(
+                    Icons.live_tv,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                ],
+              ),
             ),
-            Row(
-              children: <Widget>[
-                Text(
-                  'You have pushed the button this many times:',
-                ),
-                Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.display1,
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 40.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.video_library,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                  Icon(
+                    Icons.contact_phone,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                  Icon(
+                    Icons.contact_mail,
+                    size: 60,
+                    color: Colors.green[400],
+                  ),
+                ],
+              ),
             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -146,8 +220,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           fit: BoxFit.fitWidth)),
                 )),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
+              leading: Icon(
+                Icons.home,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'Home',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -156,8 +236,34 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.people),
-              title: Text('About'),
+              leading: Icon(
+                Icons.people,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'About',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => About()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.live_tv,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'Live',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -166,8 +272,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.live_tv),
-              title: Text('Live'),
+              leading: Icon(
+                Icons.video_library,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'Videos',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -176,8 +288,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.video_library),
-              title: Text('Videos'),
+              leading: Icon(
+                Icons.contact_phone,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'Prayer Request',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -186,8 +304,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.contact_mail),
-              title: Text('Contact'),
+              leading: Icon(
+                Icons.contact_mail,
+                color: Colors.green[400],
+              ),
+              title: Text(
+                'Contact',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
               onTap: () {
                 // Update the state of the app
                 // ...
