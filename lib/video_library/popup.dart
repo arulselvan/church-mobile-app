@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:llm_mobile_app/fullscreen.dart';
+import 'package:llm_mobile_app/video_library/fullscreen.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:llm_mobile_app/mixin.dart';
 
-/*
+YoutubePlayerController _controller = YoutubePlayerController(
+  initialVideoId: 'NrtH3TrV-dw',
+  flags: YoutubePlayerFlags(autoPlay: true),
+);
+
 class PopupVideoPlayerRoute extends ModalRoute {
   final Widget child;
   double top, left, right, bottom;
@@ -83,6 +87,19 @@ class PopupVideoPlayer extends StatefulWidget {
 class _PopupVideoPlayerState extends State<PopupVideoPlayer>
     with PortraitMode<PopupVideoPlayer> {
   YoutubePlayerController videoController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //videoController = YoutubePlayerController();
+
+    videoController = YoutubePlayerController(
+      initialVideoId: widget.videoId,
+      flags: YoutubePlayerFlags(autoPlay: true),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -133,12 +150,14 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer>
             Container(
               alignment: Alignment.center,
               child: YoutubePlayer(
-                context: context,
-                videoId: widget.videoId,
-                autoPlay: false,
-                hideControls: true,
-                onPlayerInitialized: (YoutubePlayerController controller) {
-                  videoController = controller;
+                controller: videoController,
+                showVideoProgressIndicator: true,
+                progressIndicatorColor: Colors.amber,
+                progressColors: ProgressBarColors(
+                    playedColor: Colors.amber, handleColor: Colors.amberAccent),
+                onReady: () {
+                  //_controller.play();
+                  videoController.play();
                 },
               ),
             ),
@@ -159,4 +178,3 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer>
     );
   }
 }
-*/

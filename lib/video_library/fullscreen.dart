@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:llm_mobile_app/mixin.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -22,6 +21,10 @@ class VideoPlayerFullScreen extends StatelessWidget with LandScapeMode {
           Container(
             alignment: Alignment.center,
             child: YoutubePlayer(
+              controller: YoutubePlayerController(
+                initialVideoId: videoId,
+                flags: YoutubePlayerFlags(autoPlay: true),
+              ),
               showVideoProgressIndicator: true,
             ),
           ),
@@ -41,5 +44,3 @@ class VideoPlayerFullScreen extends StatelessWidget with LandScapeMode {
     );
   }
 }
-
-*/

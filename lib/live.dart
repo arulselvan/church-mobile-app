@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Live extends StatelessWidget {
   @override
@@ -8,11 +9,12 @@ class Live extends StatelessWidget {
         title: Text("Live"),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Go back!'),
+        child: YoutubePlayer(
+          controller: YoutubePlayerController(
+            initialVideoId: "9vzd289Eedk",
+            flags: YoutubePlayerFlags(autoPlay: true, isLive: true),
+          ),
+          showVideoProgressIndicator: true,
         ),
       ),
     );
