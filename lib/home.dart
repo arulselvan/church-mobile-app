@@ -7,9 +7,9 @@ import './prayer-request.dart';
 import './live.dart';
 
 final List<String> imgList = [
-  'http://llmchurch.org/llm-admin/img/1406886182banner38b.jpg',
-  'http://llmchurch.org/llm-admin/img/banner.png',
-  'http://llmchurch.org/llm-admin/img/1406886362Here-I-Am-To-Worship-Website-Banner.jpg'
+  'http://llmchurch.org/images/llm-slider1.jpg',
+  'http://llmchurch.org/images/llm-slider3.jpg',
+  'http://llmchurch.org/images/llm-slider5.jpg',
 ];
 
 class LLMHomePage extends StatefulWidget {
@@ -106,13 +106,12 @@ class _LLMHomePageState extends State<LLMHomePage> {
       ),
       body: Container(
         decoration: BoxDecoration(
-            /*image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/images/home_bg.jpeg")),*/
-            gradient: LinearGradient(
+            image: DecorationImage(
+                fit: BoxFit.cover, image: AssetImage("assets/images/bg.png"))),
+        /*gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.green[400], Color(0xff982033)])),
+                colors: [Colors.green[400], Color(0xff982033)])),*/
 
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -143,17 +142,19 @@ class _LLMHomePageState extends State<LLMHomePage> {
                   ]);
                 })),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0),
+              padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(
-                      Icons.person,
-                      size: 60,
-                      color: Colors.green[400],
+                    icon: Image(
+                      image: AssetImage('assets/images/about.png'),
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
                     ), //`Icon` to display
                     tooltip: 'About',
+                    iconSize: 50,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -162,12 +163,14 @@ class _LLMHomePageState extends State<LLMHomePage> {
                     },
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.live_tv,
-                      size: 60,
-                      color: Colors.green[400],
+                    icon: Image(
+                      image: AssetImage('assets/images/live.png'),
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
                     ), //`Icon` to display
-                    tooltip: 'About',
+                    tooltip: 'Live',
+                    iconSize: 50,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -176,12 +179,14 @@ class _LLMHomePageState extends State<LLMHomePage> {
                     },
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.video_library,
-                      size: 60,
-                      color: Colors.green[400],
-                    ), //`Icon` to display
+                    icon: Image(
+                      image: AssetImage('assets/images/videos.png'),
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
+                    ),
                     tooltip: 'Videos',
+                    iconSize: 50,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -198,15 +203,38 @@ class _LLMHomePageState extends State<LLMHomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Icon(
-                    Icons.contact_phone,
-                    size: 60,
-                    color: Colors.green[400],
+                  IconButton(
+                    icon: Image(
+                      image: AssetImage('assets/images/prayer.png'),
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
+                    ), //`Icon` to display
+                    tooltip: 'Prayer',
+                    iconSize: 50,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrayerRequest()),
+                      );
+                    },
                   ),
-                  Icon(
-                    Icons.contact_mail,
-                    size: 60,
-                    color: Colors.green[400],
+                  IconButton(
+                    icon: Image(
+                      image: AssetImage('assets/images/contact.png'),
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
+                    ), //`Icon` to display
+                    tooltip: 'Contact',
+                    iconSize: 50,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Contact()),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -236,11 +264,12 @@ class _LLMHomePageState extends State<LLMHomePage> {
             ListTile(
               leading: Icon(
                 Icons.home,
-                color: Colors.green[400],
+                color: Color(0xffBDD300),
+                size: 40,
               ),
               title: Text(
                 'Home',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 // Update the state of the app
@@ -250,13 +279,16 @@ class _LLMHomePageState extends State<LLMHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.people,
-                color: Colors.green[400],
+              leading: Image(
+                image: AssetImage('assets/images/about.png'),
+                color: null,
+                width: 34,
+                height: 34,
+                alignment: Alignment.centerLeft,
               ),
               title: Text(
                 'About',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 // Update the state of the app
@@ -270,13 +302,16 @@ class _LLMHomePageState extends State<LLMHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.live_tv,
-                color: Colors.green[400],
+              leading: Image(
+                image: AssetImage('assets/images/live.png'),
+                color: null,
+                width: 34,
+                height: 34,
+                alignment: Alignment.centerLeft,
               ),
               title: Text(
                 'Live',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 // Update the state of the app
@@ -290,13 +325,16 @@ class _LLMHomePageState extends State<LLMHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.video_library,
-                color: Colors.green[400],
+              leading: Image(
+                image: AssetImage('assets/images/videos.png'),
+                color: null,
+                width: 34,
+                height: 34,
+                alignment: Alignment.centerLeft,
               ),
               title: Text(
                 'Videos',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 // Update the state of the app
@@ -308,13 +346,16 @@ class _LLMHomePageState extends State<LLMHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.contact_phone,
-                color: Colors.green[400],
+              leading: Image(
+                image: AssetImage('assets/images/prayer.png'),
+                color: null,
+                alignment: Alignment.centerLeft,
+                width: 34,
+                height: 34,
               ),
               title: Text(
                 'Prayer Request',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 // Update the state of the app
@@ -328,13 +369,16 @@ class _LLMHomePageState extends State<LLMHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.contact_mail,
-                color: Colors.green[400],
+              leading: Image(
+                image: AssetImage('assets/images/contact.png'),
+                color: null,
+                alignment: Alignment.centerLeft,
+                width: 34,
+                height: 34,
               ),
               title: Text(
                 'Contact',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               onTap: () {
                 Navigator.push(

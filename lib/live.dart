@@ -11,7 +11,7 @@ class Live extends StatelessWidget {
       body: Center(
         child: YoutubePlayer(
           controller: YoutubePlayerController(
-            initialVideoId: "9vzd289Eedk",
+            initialVideoId: "GM9JnSMrbNA",
             flags: YoutubePlayerFlags(autoPlay: true, isLive: true),
           ),
           showVideoProgressIndicator: true,

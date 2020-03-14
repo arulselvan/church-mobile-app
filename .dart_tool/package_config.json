@@ -183,7 +183,7 @@
     },
     {
       "name": "webview_flutter",
-      "rootUri": "file:///Users/abasker/Arul/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.19+4",
+      "rootUri": "file:///Users/abasker/Arul/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.19+9",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -212,7 +212,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-02-01T03:21:05.476Z",
+  "generated": "2020-03-07T01:16:39.411128Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }

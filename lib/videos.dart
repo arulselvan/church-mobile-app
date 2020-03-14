@@ -4,14 +4,7 @@ import 'package:llm_mobile_app/video_library/apikey.dart';
 import 'package:llm_mobile_app/video_library/popup.dart';
 import 'package:youtube_api/youtube_api.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import './video_library/apikey.dart';
-
-/*
-import 'package:llm_mobile_app/mixin.dart';
-import "package:llm_mobile_app/apikey.dart";
-import 'package:llm_mobile_app/popup.dart';
-*/
 
 YoutubePlayerController _controller = YoutubePlayerController(
   initialVideoId: 'NrtH3TrV-dw',
@@ -36,7 +29,7 @@ class _VideoListState extends State<VideosGallary>
   void initState() {
     super.initState();
     textController = TextEditingController();
-    _youtubeAPI = YoutubeAPI(apikey, type: 'video');
+    _youtubeAPI = YoutubeAPI(apikey, type: 'video', maxResults: 50);
     _ytResults = [];
     videoItems = [];
     callAPI("LLM Church");
@@ -47,7 +40,7 @@ class _VideoListState extends State<VideosGallary>
       videoItems.clear();
     }
 
-    _ytResults = await _youtubeAPI.search(query);
+    _ytResults = await _youtubeAPI.channel("UCSW0N3mrelM4fnspyJXkSkw");
 
     setState(() {
       for (YT_API result in _ytResults) {

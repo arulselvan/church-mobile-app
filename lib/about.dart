@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class About extends StatelessWidget {
   @override
@@ -7,14 +8,14 @@ class About extends StatelessWidget {
       appBar: AppBar(
         title: Text("About"),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Go back!'),
-        ),
-      ),
+      body: Container(
+          child: WebView(
+        initialUrl: Uri.dataFromString(
+                '<html><body><iframe src="http://llmchurch.org/about.php" width="100%" height="100%" frameBorder="0"></iframe></body></html>',
+                mimeType: 'text/html')
+            .toString(),
+        javascriptMode: JavascriptMode.unrestricted,
+      )),
     );
   }
 }
