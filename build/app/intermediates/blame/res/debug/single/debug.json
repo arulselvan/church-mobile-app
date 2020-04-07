@@ -64,12 +64,12 @@
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_template_icon_group.xml"
     },
     {
-        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
-        "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
@@ -108,6 +108,10 @@
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/mipmap-mdpi_launcher_icon.png.flat",
+        "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/mipmap-mdpi/launcher_icon.png"
+    },
+    {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/layout-v16/notification_template_custom_big.xml"
     },
@@ -124,6 +128,14 @@
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/mipmap-hdpi_launcher_icon.png.flat",
+        "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/mipmap-hdpi/launcher_icon.png"
+    },
+    {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/mipmap-xxhdpi/launcher_icon.png"
+    },
+    {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
@@ -132,8 +144,16 @@
         "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/drawable/launch_background.xml"
     },
     {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/mipmap-xhdpi/launcher_icon.png"
+    },
+    {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png"
     },
     {
         "merged": "/Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",

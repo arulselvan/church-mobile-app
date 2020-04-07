@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:llm_mobile_app/video_list.dart';
 import './about.dart';
 import './videos.dart';
 import './contact.dart';
@@ -342,7 +343,7 @@ class _LLMHomePageState extends State<LLMHomePage> {
                 // Then close the drawer
                 Navigator.pop(context);
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VideosGallary()));
+                    MaterialPageRoute(builder: (context) => VideoList()));
               },
             ),
             ListTile(

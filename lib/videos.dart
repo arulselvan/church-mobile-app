@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'package:llm_mobile_app/mixin.dart';
 import 'package:llm_mobile_app/video_library/apikey.dart';
 import 'package:llm_mobile_app/video_library/popup.dart';
-import 'package:youtube_api/youtube_api.dart';
+import 'package:llm_mobile_app/youtube_api/youtube_api.dart';
+//import 'package:youtube_api/youtube_api.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import './video_library/apikey.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 YoutubePlayerController _controller = YoutubePlayerController(
   initialVideoId: 'NrtH3TrV-dw',
@@ -24,6 +29,7 @@ class _VideoListState extends State<VideosGallary>
   List<YT_API> _ytResults;
   List<VideoItem> videoItems;
   String videoId;
+  String channelId = 'UCSW0N3mrelM4fnspyJXkSkw';
 
   @override
   void initState() {
@@ -53,8 +59,73 @@ class _VideoListState extends State<VideosGallary>
     });
   }
 
+  Future<Null> callNextPage(String query) async {
+    Object nextPageOptions = {
+      "part": "snippet",
+      "maxResults": "30",
+      "key": "${apikey}",
+      "type": "video",
+      "pageToken": "${_youtubeAPI.nextPageToken}",
+      'channelId': channelId,
+    };
+
+    Uri url = new Uri.https(
+        "www.googleapis.com", "youtube/v3/search", nextPageOptions);
+
+    print(url);
+
+    var res = await http.get(url, headers: {"Accept": "application/json"});
+    var jsonData = json.decode(res.body);
+
+    print(jsonData);
+
+    if (jsonData['pageInfo']['totalResults'] == null) return;
+
+    if (jsonData == null) return;
+
+    _youtubeAPI.nextPageToken = jsonData['nextPageToken'];
+    _youtubeAPI.prevPageToken = jsonData['prevPageToken'];
+    _youtubeAPI.api.setNextPageToken(_youtubeAPI.nextPageToken);
+    _youtubeAPI.api.setPrevPageToken(_youtubeAPI.prevPageToken);
+
+    int total = jsonData['pageInfo']['totalResults'] <
+            jsonData['pageInfo']['resultsPerPage']
+        ? jsonData['pageInfo']['totalResults']
+        : jsonData['pageInfo']['resultsPerPage'];
+
+    _ytResults = [];
+    for (int i = 0; i < total; i++) {
+      _ytResults.add(new YT_API(jsonData['items'][i]));
+    }
+    _youtubeAPI.page++;
+    if (total == 0) {
+      return null;
+    }
+    //_ytResults = await _youtubeAPI.nextPage();
+
+    setState(() {
+      for (YT_API result in _ytResults) {
+        VideoItem item = VideoItem(
+          api: result,
+          listPopupTap: this,
+        );
+        videoItems.add(item);
+      }
+    });
+  }
+
+  ScrollController _scrollController = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
+    _scrollController
+      ..addListener(() {
+        if (_scrollController.position.pixels ==
+            _scrollController.position.maxScrollExtent) {
+          callNextPage('q');
+        }
+      });
+
     return Scaffold(
         appBar: AppBar(
           title: Text("Videos"),
@@ -63,17 +134,26 @@ class _VideoListState extends State<VideosGallary>
           children: <Widget>[
             Container(
                 child: Column(children: <Widget>[
-              TextFormField(
+              /*TextFormField(
                 controller: textController,
                 onFieldSubmitted: (String q) async {
                   await callAPI(q);
                   textController.clear();
                 },
-              ),
+              ),*/
               Flexible(
                 child: ListView.builder(
                   itemCount: videoItems.length,
-                  itemBuilder: (_, int index) => videoItems[index],
+                  itemBuilder: (_, int index) {
+                    print('index:${index}');
+                    print('total-length:${videoItems.length}');
+                    final widgetItem = (index + 1 == videoItems.length)
+                        ? new RaisedButton(
+                            child: const Text('Load more...'),
+                            onPressed: () => callNextPage('q'))
+                        : videoItems[index];
+                    return widgetItem;
+                  },
                 ),
               )
             ]))
@@ -111,3 +191,16 @@ class VideoItem extends StatelessWidget {
     ));
   }
 }
+
+/*
+class VideosGallary extends StatefulWidget {
+  @override
+  _VideoListState createState() => _VideoListState();
+}
+
+class _VideoListState extends State<VideosGallary> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(child: Text('TEST'));
+  }
+}*/

@@ -1,0 +1,6 @@
+# Referenced at /Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/merged_manifests/release/arm64-v8a/AndroidManifest.xml:19
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at /Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/merged_manifests/release/arm64-v8a/AndroidManifest.xml:25
+-keep class com.example.llm_mobile_app.MainActivity { <init>(); }
+# Referenced at /Users/abasker/Arul/llm/app/church-mobile-app/build/app/intermediates/merged_manifests/release/arm64-v8a/AndroidManifest.xml:19
+-keep class io.flutter.app.FlutterApplication { <init>(); }

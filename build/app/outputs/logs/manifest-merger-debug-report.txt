@@ -5,7 +5,6 @@ INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main
 INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:1:1-31:12
 INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:1:1-31:12
 MERGED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:1:1-31:12
-MERGED from [:youtube_api] /Users/abasker/Arul/llm/app/church-mobile-app/build/youtube_api/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:webview_flutter] /Users/abasker/Arul/llm/app/church-mobile-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/b8b68c04ee72209a3beca37e17f7088d/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.webkit:webkit:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e6b1c804849fbf3a96135de6255bcce0/webkit-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -57,9 +56,9 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/abas
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:10:9-39
+		ADDED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:10:9-35
 	android:icon
-		ADDED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:11:9-45
 	android:usesCleartextTraffic
 		ADDED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:12:9-44
 	android:name
@@ -98,8 +97,6 @@ uses-sdk
 INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml
-MERGED from [:youtube_api] /Users/abasker/Arul/llm/app/church-mobile-app/build/youtube_api/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:youtube_api] /Users/abasker/Arul/llm/app/church-mobile-app/build/youtube_api/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:webview_flutter] /Users/abasker/Arul/llm/app/church-mobile-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:webview_flutter] /Users/abasker/Arul/llm/app/church-mobile-app/build/webview_flutter/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/b8b68c04ee72209a3beca37e17f7088d/fragment-1.0.0/AndroidManifest.xml:20:5-44

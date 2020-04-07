@@ -23,8 +23,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="llm_mobile_app"
+        android:icon="@mipmap/launcher_icon"
+        android:label="LLM Church"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="com.example.llm_mobile_app.MainActivity"
