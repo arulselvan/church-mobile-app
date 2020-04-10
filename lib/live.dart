@@ -7,6 +7,8 @@ import 'dart:convert';
 import 'package:webview_flutter/webview_flutter.dart';
 //import 'package:webview_media/webview_flutter.dart';
 
+//Todo:Arul - webview open issue full screen https://github.com/flutter/flutter/issues/45464
+
 class Live extends StatelessWidget {
   /*getLiveVideoId() async {
     print('inside getLiveVideoId');
@@ -38,15 +40,47 @@ class Live extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Live"),
-      ),
-      body: Container(
-          child: WebView(
-        initialUrl:
-            'https://www.youtube.com/embed/live_stream?channel=UCSW0N3mrelM4fnspyJXkSkw',
-        javascriptMode: JavascriptMode.unrestricted,
-      )),
-    );
+        appBar: AppBar(
+          title: Text("Live"),
+        ),
+        body: Container(
+            child: Stack(children: [
+          WebView(
+            initialMediaPlaybackPolicy: AutoMediaPlaybackPolicy.always_allow,
+            /*initialUrl: Uri.dataFromString(
+                    '<html><body><iframe width="100%" height="100%" src="https://www.youtube.com/embed/live_stream?channel=UCSW0N3mrelM4fnspyJXkSkw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></body></html>',
+                    mimeType: 'text/html')
+                .toString(),*/
+            initialUrl:
+                'https://www.youtube.com/embed/live_stream?channel=UCSW0N3mrelM4fnspyJXkSkw&enablejsapi=1&showinfo=0&autoplay=true&fs=1&rel=0',
+            /*initialUrl:
+                'https://www.youtube.com/embed/bWpsphRaIr4?enablejsapi=1&showinfo=0&autoplay=true&fs=1&rel=0',
+            */
+            javascriptMode: JavascriptMode.unrestricted,
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 70,
+              color: Colors.transparent,
+            ),
+          ),
+          /*Positioned(
+            bottom: 0,
+            right: 0,
+            child: Container(
+              width: 50,
+              height: 70,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blue,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+          )*/
+        ])));
   }
 }
