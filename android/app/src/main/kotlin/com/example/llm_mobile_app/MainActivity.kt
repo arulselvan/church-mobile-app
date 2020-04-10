@@ -1,4 +1,4 @@
-package com.example.llm_mobile_app
+package com.llm.church_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.llm_mobile_app"
+3    package="com.llm.church_app"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -12,63 +12,214 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/debug/AndroidManifest.xml:6:22-64
-15    <!--
-16     io.flutter.app.FlutterApplication is an android.app.Application that
-17         calls FlutterMain.startInitialization(this); in its onCreate method.
-18         In most cases you can leave this as-is, but you if you want to provide
-19         additional functionality it is fine to subclass or reimplement
-20         FlutterApplication and put your custom class here.
-21    -->
-22    <application
-22-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:8:5-30:19
-23        android:name="io.flutter.app.FlutterApplication"
-23-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:9:9-57
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/0a271e99b6771ad4a84318244d532fb7/core-1.0.0/AndroidManifest.xml:22:18-86
-25        android:debuggable="true"
-26        android:icon="@mipmap/launcher_icon"
-26-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:11:9-45
-27        android:label="LLM Church"
-27-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:10:9-35
-28        android:usesCleartextTraffic="true" >
-28-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:12:9-44
-29        <activity
-29-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:13:9-24:20
-30            android:name="com.example.llm_mobile_app.MainActivity"
-30-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:14:13-41
-31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-31-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:17:13-163
-32            android:hardwareAccelerated="true"
-32-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:18:13-47
-33            android:launchMode="singleTop"
-33-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:15:13-43
-34            android:theme="@style/LaunchTheme"
-34-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:16:13-47
-35            android:windowSoftInputMode="adjustResize" >
-35-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:19:13-55
-36            <intent-filter>
-36-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:20:13-23:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:21:17-68
-37-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:21:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:22:17-76
-39-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:22:27-74
-40            </intent-filter>
-41        </activity>
-42        <!--
-43             Don't delete the meta-data below.
-44             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-45        -->
-46        <meta-data
-46-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:27:9-29:33
-47            android:name="flutterEmbedding"
-47-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:28:13-44
-48            android:value="2" />
-48-->/Users/abasker/Arul/llm/app/church-mobile-app/android/app/src/main/AndroidManifest.xml:29:13-30
-49    </application>
-50
-51</manifest>
+14-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:31:5-66
+14-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:31:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-79
+15-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-76
+16    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-68
+16-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-65
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:26:5-82
+17-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:26:22-79
+18    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+18-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:26:5-110
+18-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:26:22-107
+19    <!--
+20 io.flutter.app.FlutterApplication is an android.app.Application that
+21         calls FlutterMain.startInitialization(this); in its onCreate method.
+22         In most cases you can leave this as-is, but you if you want to provide
+23         additional functionality it is fine to subclass or reimplement
+24         FlutterApplication and put your custom class here.
+25    -->
+26    <application
+26-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:8:5-30:19
+27        android:name="io.flutter.app.FlutterApplication"
+27-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:9:9-57
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.0.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/AndroidManifest.xml:22:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/launcher_icon"
+30-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:11:9-45
+31        android:label="LLM Church"
+31-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:10:9-35
+32        android:usesCleartextTraffic="true" >
+32-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:12:9-44
+33        <activity
+33-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:13:9-24:20
+34            android:name="com.llm.church_app.MainActivity"
+34-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:14:13-41
+35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+35-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:17:13-163
+36            android:hardwareAccelerated="true"
+36-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:18:13-47
+37            android:launchMode="singleTop"
+37-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:15:13-43
+38            android:theme="@style/LaunchTheme"
+38-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:16:13-47
+39            android:windowSoftInputMode="adjustResize" >
+39-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:19:13-55
+40            <intent-filter>
+40-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:20:13-23:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:21:17-68
+41-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:21:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:22:17-76
+43-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:22:27-74
+44            </intent-filter>
+45        </activity>
+46        <!--
+47             Don't delete the meta-data below.
+48             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+49        -->
+50        <meta-data
+50-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:27:9-29:33
+51            android:name="flutterEmbedding"
+51-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:28:13-44
+52            android:value="2" />
+52-->/Users/abasker/Arul/llm-app/church-mobile-app/android/app/src/main/AndroidManifest.xml:29:13-30
+53
+54        <service
+54-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-16:19
+55            android:name="com.google.firebase.components.ComponentDiscoveryService"
+55-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:12:18-89
+56            android:exported="false" >
+56-->[com.google.android.gms:play-services-measurement-api:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/2531b9a3380ed3f4b69494f3a0e29527/jetified-play-services-measurement-api-16.5.0/AndroidManifest.xml:29:13-37
+57            <meta-data
+57-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:85
+58                android:name="com.google.firebase.components:io.flutter.plugins.firebaseanalytics.FlutterFirebaseAppRegistrar"
+58-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-127
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[:firebase_analytics] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_analytics/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-82
+60            <meta-data
+60-->[:firebase_core] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+61                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+61-->[:firebase_core] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[:firebase_core] /Users/abasker/Arul/llm-app/church-mobile-app/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+63            <meta-data
+63-->[com.google.android.gms:play-services-measurement-api:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/2531b9a3380ed3f4b69494f3a0e29527/jetified-play-services-measurement-api-16.5.0/AndroidManifest.xml:30:13-32:85
+64                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+64-->[com.google.android.gms:play-services-measurement-api:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/2531b9a3380ed3f4b69494f3a0e29527/jetified-play-services-measurement-api-16.5.0/AndroidManifest.xml:31:17-139
+65                android:value="com.google.firebase.components.ComponentRegistrar" />
+65-->[com.google.android.gms:play-services-measurement-api:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/2531b9a3380ed3f4b69494f3a0e29527/jetified-play-services-measurement-api-16.5.0/AndroidManifest.xml:32:17-82
+66            <meta-data
+66-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:32:13-34:85
+67                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+67-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:33:17-96
+68                android:value="com.google.firebase.components.ComponentRegistrar" />
+68-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:34:17-82
+69        </service>
+70
+71        <receiver
+71-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:37:9-44:20
+72            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+72-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:38:13-78
+73            android:exported="true"
+73-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:39:13-36
+74            android:permission="com.google.android.c2dm.permission.SEND" >
+74-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:40:13-73
+75            <intent-filter>
+75-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:41:13-43:29
+76                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+76-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:42:17-81
+76-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:42:25-78
+77            </intent-filter>
+78        </receiver>
+79        <!--
+80             FirebaseInstanceIdService performs security checks at runtime,
+81             no need for explicit permissions despite exported="true"
+82        -->
+83        <service
+83-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:50:9-56:19
+84            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+84-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:51:13-77
+85            android:exported="true" >
+85-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:52:13-36
+86            <intent-filter android:priority="-500" >
+86-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:53:13-55:29
+86-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:53:28-51
+87                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+87-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:54:17-80
+87-->[com.google.firebase:firebase-iid:17.1.2] /Users/abasker/.gradle/caches/transforms-2/files-2.1/83f40dd25efd5045a3eeda5a7cf83b4b/jetified-firebase-iid-17.1.2/AndroidManifest.xml:54:25-77
+88            </intent-filter>
+89        </service>
+90
+91        <provider
+91-->[com.google.firebase:firebase-common:16.1.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/227711e3c3b30f6b6d1140436746a000/jetified-firebase-common-16.1.0/AndroidManifest.xml:12:9-16:39
+92            android:name="com.google.firebase.provider.FirebaseInitProvider"
+92-->[com.google.firebase:firebase-common:16.1.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/227711e3c3b30f6b6d1140436746a000/jetified-firebase-common-16.1.0/AndroidManifest.xml:13:13-77
+93            android:authorities="com.llm.church_app.firebaseinitprovider"
+93-->[com.google.firebase:firebase-common:16.1.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/227711e3c3b30f6b6d1140436746a000/jetified-firebase-common-16.1.0/AndroidManifest.xml:14:13-72
+94            android:exported="false"
+94-->[com.google.firebase:firebase-common:16.1.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/227711e3c3b30f6b6d1140436746a000/jetified-firebase-common-16.1.0/AndroidManifest.xml:15:13-37
+95            android:initOrder="100" />
+95-->[com.google.firebase:firebase-common:16.1.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/227711e3c3b30f6b6d1140436746a000/jetified-firebase-common-16.1.0/AndroidManifest.xml:16:13-36
+96
+97        <receiver
+97-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:29:9-33:20
+98            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+98-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:30:13-85
+99            android:enabled="true"
+99-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:31:13-35
+100            android:exported="false" >
+100-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:32:13-37
+101        </receiver>
+102        <receiver
+102-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:34:9-42:20
+103            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+103-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:35:13-100
+104            android:enabled="true"
+104-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:36:13-35
+105            android:exported="true"
+105-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:37:13-36
+106            android:permission="android.permission.INSTALL_PACKAGES" >
+106-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:38:13-69
+107            <intent-filter>
+107-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:39:13-41:29
+108                <action android:name="com.android.vending.INSTALL_REFERRER" />
+108-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:40:17-79
+108-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:40:25-76
+109            </intent-filter>
+110        </receiver>
+111
+112        <service
+112-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:44:9-47:40
+113            android:name="com.google.android.gms.measurement.AppMeasurementService"
+113-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:45:13-84
+114            android:enabled="true"
+114-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:46:13-35
+115            android:exported="false" />
+115-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:47:13-37
+116        <service
+116-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:48:9-52:72
+117            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+117-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:49:13-87
+118            android:enabled="true"
+118-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:50:13-35
+119            android:exported="false"
+119-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:51:13-37
+120            android:permission="android.permission.BIND_JOB_SERVICE" />
+120-->[com.google.android.gms:play-services-measurement:16.5.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/e899f5bb9e0f046f2584ce8eef68f4b5/jetified-play-services-measurement-16.5.0/AndroidManifest.xml:52:13-69
+121
+122        <activity
+122-->[com.google.android.gms:play-services-base:16.0.1] /Users/abasker/.gradle/caches/transforms-2/files-2.1/4633f2927daf11ec700a47410857b663/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+123            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+123-->[com.google.android.gms:play-services-base:16.0.1] /Users/abasker/.gradle/caches/transforms-2/files-2.1/4633f2927daf11ec700a47410857b663/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-base:16.0.1] /Users/abasker/.gradle/caches/transforms-2/files-2.1/4633f2927daf11ec700a47410857b663/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.android.gms:play-services-base:16.0.1] /Users/abasker/.gradle/caches/transforms-2/files-2.1/4633f2927daf11ec700a47410857b663/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+126
+127        <meta-data
+127-->[com.google.android.gms:play-services-basement:16.2.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/6d36bcfef6cd33ee2ab3fdd62bf439bc/jetified-play-services-basement-16.2.0/AndroidManifest.xml:23:9-25:69
+128            android:name="com.google.android.gms.version"
+128-->[com.google.android.gms:play-services-basement:16.2.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/6d36bcfef6cd33ee2ab3fdd62bf439bc/jetified-play-services-basement-16.2.0/AndroidManifest.xml:24:13-58
+129            android:value="@integer/google_play_services_version" />
+129-->[com.google.android.gms:play-services-basement:16.2.0] /Users/abasker/.gradle/caches/transforms-2/files-2.1/6d36bcfef6cd33ee2ab3fdd62bf439bc/jetified-play-services-basement-16.2.0/AndroidManifest.xml:25:13-66
+130    </application>
+131
+132</manifest>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "419075512834",
+    "firebase_url": "https://church-mobile-app-22640.firebaseio.com",
+    "project_id": "church-mobile-app-22640",
+    "storage_bucket": "church-mobile-app-22640.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419075512834:android:5fad39ddf2c54aeff1a51b",
+        "android_client_info": {
+          "package_name": "com.llm.church_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419075512834-98ojc8ngdgtpj7nai3mf44hu4tg7hg2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmK3TF949mBHQJPdFMjxb_crzjqVNOGao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419075512834-98ojc8ngdgtpj7nai3mf44hu4tg7hg2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
