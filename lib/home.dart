@@ -343,7 +343,7 @@ class _LLMHomePageState extends State<LLMHomePage> {
                 // Then close the drawer
                 Navigator.pop(context);
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VideoList()));
+                    MaterialPageRoute(builder: (context) => VideosGallary()));
               },
             ),
             ListTile(

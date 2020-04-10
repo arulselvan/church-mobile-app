@@ -72,12 +72,8 @@ class _VideoListState extends State<VideosGallary>
     Uri url = new Uri.https(
         "www.googleapis.com", "youtube/v3/search", nextPageOptions);
 
-    print(url);
-
     var res = await http.get(url, headers: {"Accept": "application/json"});
     var jsonData = json.decode(res.body);
-
-    print(jsonData);
 
     if (jsonData['pageInfo']['totalResults'] == null) return;
 
@@ -145,8 +141,6 @@ class _VideoListState extends State<VideosGallary>
                 child: ListView.builder(
                   itemCount: videoItems.length,
                   itemBuilder: (_, int index) {
-                    print('index:${index}');
-                    print('total-length:${videoItems.length}');
                     final widgetItem = (index + 1 == videoItems.length)
                         ? new RaisedButton(
                             child: const Text('Load more...'),
