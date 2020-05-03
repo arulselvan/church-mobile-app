@@ -6,6 +6,7 @@ import './videos.dart';
 import './contact.dart';
 import './prayer-request.dart';
 import './live.dart';
+import './appDrawer.dart';
 
 final List<String> imgList = [
   'http://llmchurch.org/images/llm-slider1.jpg',
@@ -97,300 +98,153 @@ class _LLMHomePageState extends State<LLMHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.transparent,
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text('Home'),
+        extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover, image: AssetImage("assets/images/bg.png"))),
-        /*gradient: LinearGradient(
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text('Home'),
+          backgroundColor: Colors.transparent,
+        ),
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/bg.png"))),
+          /*gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [Colors.green[400], Color(0xff982033)])),*/
 
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Invoke "debug painting" (press "p" in the console, choose the
+            // "Toggle Debug Paint" action from the Flutter Inspector in Android
+            // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+            // to see the wireframe for each widget.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
 
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(top: 0),
-                //Builder needed to provide mediaQuery context from material app
-                child: Builder(builder: (context) {
-                  return Column(children: [
-                    getFullScreenCarousel(context),
-                  ]);
-                })),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/images/about.png'),
-                      color: null,
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.center,
-                    ), //`Icon` to display
-                    tooltip: 'About',
-                    iconSize: 50,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => About()),
-                      );
-                    },
-                  ),
-                  IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/images/live.png'),
-                      color: null,
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.center,
-                    ), //`Icon` to display
-                    tooltip: 'Live',
-                    iconSize: 50,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Live()),
-                      );
-                    },
-                  ),
-                  IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/images/videos.png'),
-                      color: null,
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                  padding: EdgeInsets.only(top: 0),
+                  //Builder needed to provide mediaQuery context from material app
+                  child: Builder(builder: (context) {
+                    return Column(children: [
+                      getFullScreenCarousel(context),
+                    ]);
+                  })),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    IconButton(
+                      icon: Image(
+                        image: AssetImage('assets/images/about.png'),
+                        color: null,
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.center,
+                      ), //`Icon` to display
+                      tooltip: 'About',
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => About()),
+                        );
+                      },
                     ),
-                    tooltip: 'Videos',
-                    iconSize: 50,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VideosGallary()),
-                      );
-                    },
-                  )
-                ],
+                    IconButton(
+                      icon: Image(
+                        image: AssetImage('assets/images/live.png'),
+                        color: null,
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.center,
+                      ), //`Icon` to display
+                      tooltip: 'Live',
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Live()),
+                        );
+                      },
+                    ),
+                    IconButton(
+                      icon: Image(
+                        image: AssetImage('assets/images/videos.png'),
+                        color: null,
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.center,
+                      ),
+                      tooltip: 'Videos',
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VideosGallary()),
+                        );
+                      },
+                    )
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/images/prayer.png'),
-                      color: null,
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.center,
-                    ), //`Icon` to display
-                    tooltip: 'Prayer',
-                    iconSize: 50,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PrayerRequest()),
-                      );
-                    },
-                  ),
-                  IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/images/contact.png'),
-                      color: null,
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.center,
-                    ), //`Icon` to display
-                    tooltip: 'Contact',
-                    iconSize: 50,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Contact()),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            )
-          ],
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 40.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    IconButton(
+                      icon: Image(
+                        image: AssetImage('assets/images/prayer.png'),
+                        color: null,
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.center,
+                      ), //`Icon` to display
+                      tooltip: 'Prayer',
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PrayerRequest()),
+                        );
+                      },
+                    ),
+                    IconButton(
+                      icon: Image(
+                        image: AssetImage('assets/images/contact.png'),
+                        color: null,
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.center,
+                      ), //`Icon` to display
+                      tooltip: 'Contact',
+                      iconSize: 50,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Contact()),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            Container(
-                height: 160,
-                child: DrawerHeader(
-                  child: Text(''),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/llm-logo.png"),
-                          fit: BoxFit.fitWidth)),
-                )),
-            ListTile(
-              leading: Icon(
-                Icons.home,
-                color: Color(0xffBDD300),
-                size: 40,
-              ),
-              title: Text(
-                'Home',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Image(
-                image: AssetImage('assets/images/about.png'),
-                color: null,
-                width: 34,
-                height: 34,
-                alignment: Alignment.centerLeft,
-              ),
-              title: Text(
-                'About',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => About()),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image(
-                image: AssetImage('assets/images/live.png'),
-                color: null,
-                width: 34,
-                height: 34,
-                alignment: Alignment.centerLeft,
-              ),
-              title: Text(
-                'Live',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Live()),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image(
-                image: AssetImage('assets/images/videos.png'),
-                color: null,
-                width: 34,
-                height: 34,
-                alignment: Alignment.centerLeft,
-              ),
-              title: Text(
-                'Videos',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VideosGallary()));
-              },
-            ),
-            ListTile(
-              leading: Image(
-                image: AssetImage('assets/images/prayer.png'),
-                color: null,
-                alignment: Alignment.centerLeft,
-                width: 34,
-                height: 34,
-              ),
-              title: Text(
-                'Prayer Request',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PrayerRequest()),
-                );
-              },
-            ),
-            ListTile(
-              leading: Image(
-                image: AssetImage('assets/images/contact.png'),
-                color: null,
-                alignment: Alignment.centerLeft,
-                width: 34,
-                height: 34,
-              ),
-              title: Text(
-                'Contact',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Contact()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
+        drawer: AppDrawer());
   }
 }
