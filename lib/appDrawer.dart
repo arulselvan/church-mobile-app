@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llm_mobile_app/care_cell/attendance.dart';
 import './about.dart';
 import './videos.dart';
 import './contact.dart';
@@ -181,6 +182,70 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
+          ExpansionTile(
+            title: Text('CareCell',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            children: <Widget>[
+              ListTile(
+                leading: Image(
+                  image: AssetImage('assets/images/contact.png'),
+                  color: null,
+                  alignment: Alignment.centerLeft,
+                  width: 34,
+                  height: 34,
+                ),
+                title: Text(
+                  'Attendance',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CareCellAttendance()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: Image(
+                  image: AssetImage('assets/images/contact.png'),
+                  color: null,
+                  alignment: Alignment.centerLeft,
+                  width: 34,
+                  height: 34,
+                ),
+                title: Text(
+                  'House Visit',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Contact()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: Image(
+                  image: AssetImage('assets/images/contact.png'),
+                  color: null,
+                  alignment: Alignment.centerLeft,
+                  width: 34,
+                  height: 34,
+                ),
+                title: Text(
+                  'Prayer Request',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Contact()),
+                  );
+                },
+              )
+            ],
+          )
         ],
       ),
     );
